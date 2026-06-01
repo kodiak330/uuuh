@@ -97,7 +97,7 @@ function renderPendingExercises() {
         <div class="log-item-name">${esc(ex.name)}</div>
         <div class="log-item-meta">${exerciseMeta(ex)}</div>
       </div>
-      <button class="delete-btn" data-pending="${i}" title="Remove">✕</button>
+      <button class="delete-btn" data-pending="${i}" title="Remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
   `).join('');
   list.querySelectorAll('[data-pending]').forEach(btn => {
@@ -195,7 +195,7 @@ function refreshDashboard() {
       </div>
       <div class="log-item-right">
         <div class="log-item-date">${fmtDate(w.date)}</div>
-        <span class="log-item-badge">Workout</span>
+        <span class="badge badge-workout">Workout</span>
       </div>
     </div>
   `).join('');
@@ -265,9 +265,9 @@ function renderHistory() {
           </div>
           <div class="log-item-right">
             <div class="log-item-date">${fmtDate(w.date)}</div>
-            <span class="log-item-badge">Workout</span>
+            <span class="badge badge-workout">Workout</span>
           </div>
-          <button class="delete-btn" data-delete-workout="${w.id}" title="Delete">✕</button>
+          <button class="delete-btn" data-delete-workout="${w.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         </div>
       `;
     } else {
@@ -286,9 +286,9 @@ function renderHistory() {
           </div>
           <div class="log-item-right">
             <div class="log-item-date">${fmtDate(d.date)}</div>
-            <span class="log-item-badge daily">Daily</span>
+            <span class="badge badge-daily">Daily</span>
           </div>
-          <button class="delete-btn" data-delete-daily="${d.date}" title="Delete">✕</button>
+          <button class="delete-btn" data-delete-daily="${d.date}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         </div>
       `;
     }

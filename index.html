@@ -7,149 +7,180 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="app">
-    <header>
+<div class="app">
+  <header>
+    <div class="header-inner">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
       <h1>Fitness Tracker</h1>
-      <p class="date" id="today-date"></p>
-    </header>
+    </div>
+    <p class="date" id="today-date"></p>
+  </header>
 
-    <nav class="tabs">
-      <button class="tab active" data-tab="dashboard">Dashboard</button>
-      <button class="tab" data-tab="workout">Log Workout</button>
-      <button class="tab" data-tab="daily">Daily Stats</button>
-      <button class="tab" data-tab="history">History</button>
-    </nav>
+  <nav class="tabs">
+    <button class="tab active" data-tab="dashboard">Dashboard</button>
+    <button class="tab" data-tab="workout">Log Workout</button>
+    <button class="tab" data-tab="daily">Daily Stats</button>
+    <button class="tab" data-tab="history">History</button>
+  </nav>
 
-    <!-- Dashboard -->
-    <section id="tab-dashboard" class="tab-content active">
-      <div class="summary-cards">
-        <div class="card">
-          <span class="card-icon">🏋️</span>
-          <div>
-            <p class="card-label">Workouts This Week</p>
-            <p class="card-value" id="weekly-workouts">0</p>
+  <!-- Dashboard -->
+  <section id="tab-dashboard" class="tab-content active">
+    <div class="summary-cards">
+
+      <div class="card c-purple">
+        <div class="card-top">
+          <span class="card-label">Workouts This Week</span>
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M6.5 6.5h1M16.5 6.5h1M6.5 17.5h1M16.5 17.5h1"/>
+              <path d="M7.5 6.5v11M17.5 6.5v11M7.5 12h9"/>
+            </svg>
           </div>
         </div>
-        <div class="card">
-          <span class="card-icon">👣</span>
-          <div>
-            <p class="card-label">Steps Today</p>
-            <p class="card-value" id="today-steps">0</p>
-          </div>
-        </div>
-        <div class="card">
-          <span class="card-icon">🔥</span>
-          <div>
-            <p class="card-label">Calories Today</p>
-            <p class="card-value" id="today-calories">0</p>
-          </div>
-        </div>
-        <div class="card">
-          <span class="card-icon">📅</span>
-          <div>
-            <p class="card-label">Streak (days)</p>
-            <p class="card-value" id="streak">0</p>
-          </div>
-        </div>
+        <div class="card-value" id="weekly-workouts">0</div>
       </div>
 
-      <div class="section-title">Recent Workouts</div>
-      <div id="recent-workouts" class="log-list">
-        <p class="empty-state">No workouts logged yet.</p>
+      <div class="card c-blue">
+        <div class="card-top">
+          <span class="card-label">Steps Today</span>
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 4a1 1 0 1 0 2 0 1 1 0 0 0-2 0"/>
+              <path d="M10.5 8.5 9 14l2.5 1.5L13 20"/>
+              <path d="M13.5 8.5c1 0 2.5.5 3 2l1 3-2.5.5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card-value" id="today-steps">0</div>
       </div>
-    </section>
 
-    <!-- Log Workout -->
-    <section id="tab-workout" class="tab-content">
-      <form id="workout-form" class="form-card">
-        <h2>Log a Workout</h2>
+      <div class="card c-orange">
+        <div class="card-top">
+          <span class="card-label">Calories Burned</span>
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card-value" id="today-calories">0</div>
+      </div>
+
+      <div class="card c-green">
+        <div class="card-top">
+          <span class="card-label">Day Streak</span>
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card-value" id="streak">0</div>
+      </div>
+
+    </div>
+
+    <div class="section-title">Recent Workouts</div>
+    <div id="recent-workouts" class="log-list">
+      <p class="empty-state">No workouts logged yet.</p>
+    </div>
+  </section>
+
+  <!-- Log Workout -->
+  <section id="tab-workout" class="tab-content">
+    <form id="workout-form" class="form-card">
+      <h2>Log an Exercise</h2>
+      <div class="form-group">
+        <label for="workout-name">Exercise Name</label>
+        <input type="text" id="workout-name" placeholder="e.g. Bench Press" required />
+      </div>
+      <div class="form-row">
         <div class="form-group">
-          <label for="workout-name">Exercise Name</label>
-          <input type="text" id="workout-name" placeholder="e.g. Bench Press" required />
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="workout-sets">Sets</label>
-            <input type="number" id="workout-sets" min="1" max="99" placeholder="3" />
-          </div>
-          <div class="form-group">
-            <label for="workout-reps">Reps</label>
-            <input type="number" id="workout-reps" min="1" max="999" placeholder="10" />
-          </div>
-          <div class="form-group">
-            <label for="workout-weight">Weight (lbs)</label>
-            <input type="number" id="workout-weight" min="0" step="0.5" placeholder="135" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="workout-notes">Notes (optional)</label>
-          <input type="text" id="workout-notes" placeholder="How did it feel?" />
-        </div>
-        <button type="submit" class="btn-primary">Add Exercise</button>
-      </form>
-
-      <div class="section-title">Today's Workout Session</div>
-      <div id="today-workout-list" class="log-list">
-        <p class="empty-state">No exercises added yet.</p>
-      </div>
-      <button id="save-workout" class="btn-secondary" style="display:none">Save Workout Session</button>
-    </section>
-
-    <!-- Daily Stats -->
-    <section id="tab-daily" class="tab-content">
-      <form id="daily-form" class="form-card">
-        <h2>Today's Activity</h2>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="daily-steps">Steps</label>
-            <input type="number" id="daily-steps" min="0" placeholder="10000" />
-          </div>
-          <div class="form-group">
-            <label for="daily-calories">Calories Burned</label>
-            <input type="number" id="daily-calories" min="0" placeholder="500" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="daily-water">Water (oz)</label>
-            <input type="number" id="daily-water" min="0" placeholder="64" />
-          </div>
-          <div class="form-group">
-            <label for="daily-sleep">Sleep (hrs)</label>
-            <input type="number" id="daily-sleep" min="0" max="24" step="0.5" placeholder="8" />
-          </div>
+          <label for="workout-sets">Sets</label>
+          <input type="number" id="workout-sets" min="1" max="99" placeholder="3" />
         </div>
         <div class="form-group">
-          <label for="daily-weight">Body Weight (lbs)</label>
-          <input type="number" id="daily-weight" min="0" step="0.1" placeholder="170" />
+          <label for="workout-reps">Reps</label>
+          <input type="number" id="workout-reps" min="1" max="999" placeholder="10" />
         </div>
-        <button type="submit" class="btn-primary">Save Daily Stats</button>
-      </form>
-
-      <div class="section-title">7-Day Overview</div>
-      <div id="weekly-chart" class="chart-container">
-        <canvas id="steps-chart"></canvas>
+        <div class="form-group">
+          <label for="workout-weight">Weight (lbs)</label>
+          <input type="number" id="workout-weight" min="0" step="0.5" placeholder="135" />
+        </div>
       </div>
-    </section>
-
-    <!-- History -->
-    <section id="tab-history" class="tab-content">
-      <div class="history-filters">
-        <input type="text" id="history-search" placeholder="Search exercises..." />
-        <select id="history-filter">
-          <option value="all">All</option>
-          <option value="workout">Workouts</option>
-          <option value="daily">Daily Stats</option>
-        </select>
-        <button id="clear-all" class="btn-danger">Clear All Data</button>
+      <div class="form-group">
+        <label for="workout-notes">Notes</label>
+        <input type="text" id="workout-notes" placeholder="How did it feel?" />
       </div>
-      <div id="history-list" class="log-list">
-        <p class="empty-state">No history yet.</p>
-      </div>
-    </section>
-  </div>
+      <button type="submit" class="btn-primary">Add Exercise</button>
+    </form>
 
-  <div id="toast" class="toast"></div>
-  <script src="app.js"></script>
+    <div class="section-title">Today's Session</div>
+    <div id="today-workout-list" class="log-list">
+      <p class="empty-state">Add exercises above to build your session.</p>
+    </div>
+    <button id="save-workout" class="btn-secondary" style="display:none">Save Workout Session</button>
+  </section>
+
+  <!-- Daily Stats -->
+  <section id="tab-daily" class="tab-content">
+    <form id="daily-form" class="form-card">
+      <h2>Today's Activity</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="daily-steps">Steps</label>
+          <input type="number" id="daily-steps" min="0" placeholder="10,000" />
+        </div>
+        <div class="form-group">
+          <label for="daily-calories">Calories Burned</label>
+          <input type="number" id="daily-calories" min="0" placeholder="500" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="daily-water">Water (oz)</label>
+          <input type="number" id="daily-water" min="0" placeholder="64" />
+        </div>
+        <div class="form-group">
+          <label for="daily-sleep">Sleep (hrs)</label>
+          <input type="number" id="daily-sleep" min="0" max="24" step="0.5" placeholder="8" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="daily-weight">Body Weight (lbs)</label>
+        <input type="number" id="daily-weight" min="0" step="0.1" placeholder="170" />
+      </div>
+      <button type="submit" class="btn-primary">Save Daily Stats</button>
+    </form>
+
+    <div class="section-title">7-Day Steps</div>
+    <div class="chart-container">
+      <div id="steps-chart"></div>
+    </div>
+  </section>
+
+  <!-- History -->
+  <section id="tab-history" class="tab-content">
+    <div class="history-filters">
+      <input type="text" id="history-search" placeholder="Search exercises..." />
+      <select id="history-filter">
+        <option value="all">All entries</option>
+        <option value="workout">Workouts only</option>
+        <option value="daily">Daily only</option>
+      </select>
+      <button id="clear-all" class="btn-danger">Clear All</button>
+    </div>
+    <div id="history-list" class="log-list">
+      <p class="empty-state">No history yet.</p>
+    </div>
+  </section>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
 </body>
 </html>
